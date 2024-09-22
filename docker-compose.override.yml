@@ -1,0 +1,14 @@
+name: '1919-backend'
+
+services:
+  web:
+    container_name: app-back-dev
+    image: app-back-dev
+    build:
+       context: .
+       dockerfile: Dockerfile
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
