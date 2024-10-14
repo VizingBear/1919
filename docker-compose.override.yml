@@ -1,9 +1,9 @@
 name: '1919-backend'
 
 services:
-  web:
-    container_name: app-back-dev
-    image: app-back-dev
+  bot:
+    container_name: bot_back_dev
+    image: bot_back_dev
     build:
        context: .
        dockerfile: Dockerfile
@@ -12,3 +12,6 @@ services:
       - .:/app
     ports:
       - 8000:8000
+    environment:
+      TOKEN: ${TOKEN}
+      NGROC_TUNEL_URL: ${NGROC_TUNEL_URL}
